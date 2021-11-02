@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link href="estilos.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Reto 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="p-3 mb-2 bg-transparent text-dark">
+      Reto 5 Grupo 12 MinTIC 2022 USA
+    </div>
+    <div class="bg-success p-2 text-dark bg-opacity-10">
+      <form>
+        <div style="text-align: center" class="container mt-5">
+          <h2>Generar Reservas</h2>
+          <button type="button" id="ReportStatus" class="btn btn-info">
+            Generar Reporte Status Reservas
+          </button>
+        </div>
+      </form>
+
+      <table class="table table-striped text-center mt-3">
+        <thead>
+          <tr>
+            <th>Completadas</th>
+            <th>Canceladas</th>
+          </tr>
+        </thead>
+        <tbody id="resultadoStatus"></tbody>
+      </table>
+
+      <!-- <div id="resultadoStatus"></div>  -->
+
+      <form>
+        <div style="text-align: center" class="container mt-5">
+          <h2>Generar reportes por fechas</h2>
+          <input
+            type="date"
+            class="form-control mb-3"
+            id="RstartDate"
+            placeholder="descripcion"
+          />
+          <input
+            type="date"
+            class="form-control mb-3"
+            id="RdevolutionDate"
+            placeholder="descripcion"
+          />
+          <button type="button" class="btn btn-info" id="ReportFecha">
+            Generar reporte por fecha
+          </button>
+        </div>
+      </form>
+
+      <table class="table table-striped text-center mt-3">
+        <thead>
+          <tr>
+            <th>idReservation</th>
+            <th>startDate</th>
+            <th>devolutionDate</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="resultadoDate"></tbody>
+      </table>
+
+      <!-- <div id="resultadoDate"></div>-->
+
+      <form>
+        <div style="text-align: center" class="container mt-5">
+          <h2>Generar Reporte Clientes y Cantidad de Reservas</h2>
+          <button type="button" class="btn btn-info" id="ReportClientCantRes">
+            Generar Reporte y Cantidad de Reservas
+          </button>
+        </div>
+      </form>
+      <table class="table table-striped text-center mt-3">
+        <thead>
+          <tr>
+            <th>Total Reservas Cliente</th>
+            <th>idClient</th>
+            <th>email</th>
+            <th>name</th>
+            <th>age</th>
+          </tr>
+        </thead>
+        <tbody id="resultadoClientes"></tbody>
+      </table>
+
+      <!-- <div id="resultadoClientes"></div>-->
+      <script type="text/javascript" src="JS/reportes.js"></script>
+    </div>
+
+    <div class="bg-success p-2 text-dark bg-opacity-25">
+      <form>
+        <div
+          style="text-align: center"
+          class="bg-success p-2 text-dark bg-opacity-10"
+        >
+          <h2>Categoria</h2>
+          <input
+            type="number"
+            id="idCat"
+            class="form-control mb-3"
+            placeholder="Ingrese el id si desea Eliminar o Actualizar una categoria"
+          />
+          <button type="button" class="btn btn-danger" id="beliminarCat">
+            Eliminar</button
+          ><br />
+          <br />
+          <input
+            type="text"
+            id="nameCat"
+            class="form-control mb-3"
+            placeholder="Nombre de la categoria"
+            maxlength="45"
+          /><br />
+          <input
+            type="text"
+            id="descriptionCat"
+            class="form-control mb-3"
+            placeholder="Descripción"
+            maxlength="250"
+          /><br />
+          <button type="button" class="btn btn-info" id="bmostrarCat">
+            Mostrar categorias
+          </button>
+          <button type="button" class="btn btn-success" id="bguardarCat">
+            Guardar categoria
+          </button>
+          <button type="button" class="btn btn-secondary" id="bactualizarCat">
+            Actualizar categoria
+          </button>
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody id="informacionCat"></tbody>
+          </table>
+        </div>
+      </form>
+
+      <!--<div id="informacionCat"></div> -->
+      <script src="JS/Category.js"></script>
+
+      <form>
+        <div
+          style="text-align: center"
+          class="bg-success p-2 text-dark bg-opacity-25"
+        >
+          <h2>Creación de auditorios</h2>
+          <input
+            type="number"
+            id="idAud"
+            class="form-control mb-3"
+            class="form-control mb-3"
+            placeholder="Ingrese el id si desea Eliminar o Actualizar un Auditorio"
+          />
+          <button type="button" class="btn btn-danger" id="beliminarAud">
+            Eliminar</button
+          ><br /><br />
+          <input
+            type="text"
+            id="owner"
+            class="form-control mb-3"
+            class="form-control mb-3"
+            placeholder="Digite el owner del auditorio"
+            maxlength="45"
+          /><br />
+          <input
+            type="number"
+            id="capacity"
+            class="form-control mb-3"
+            class="form-control mb-3"
+            placeholder="Digite la capacidad"
+            maxlength=""
+          /><br />
+          <input
+            type="text"
+            id="description"
+            class="form-control mb-3"
+            class="form-control mb-3"
+            placeholder="Digite la descripción"
+            maxlength="250"
+          /><br />
+          <input
+            type="text"
+            id="nameAud"
+            class="form-control mb-3"
+            class="form-control mb-3"
+            placeholder="Digite el nombre"
+          /><br />
+          <br />
+          <button type="button" class="btn btn-info" id="bmostrarAud">
+            Mostrar Auditorios
+          </button>
+          <button type="button" class="btn btn-success" id="bguardarAud">
+            Guardar Auditorio
+          </button>
+          <button type="button" class="btn btn-secondary" id="bactualizarAud">
+            Actualizar Auditorio
+          </button>
+
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>owner</th>
+                <th>capacity</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody id="informacionAud"></tbody>
+          </table>
+        </div>
+      </form>
+
+      <!--<div id="informacionAud"></div>-->
+      <script src="JS/scriptAud.js"></script>
+
+      <form>
+        <div
+          style="text-align: center"
+          class="bg-success p-2 text-dark bg-opacity-10"
+        >
+          <h2>Creación de clientes</h2>
+          <input
+            type="number"
+            id="idCli"
+            class="form-control mb-3"
+            placeholder="Ingrese el id si desea Eliminar o Actualizar un Cliente"
+          />
+          <button type="button" class="btn btn-danger" id="beliminarCli">
+            Eliminar</button
+          ><br /><br />
+          <input
+            type="text"
+            id="nombre"
+            class="form-control mb-3"
+            placeholder="Digite el nombre cliente"
+            maxlength="250"
+          /><br />
+          <input
+            type="text"
+            id="email"
+            class="form-control mb-3"
+            placeholder="Digite el email"
+            maxlength="45"
+          /><br />
+          <input
+            type="number"
+            id="age"
+            class="form-control mb-3"
+            placeholder="Digite la edad"
+          /><br />
+          <input
+            type="password"
+            id="password"
+            class="form-control mb-3"
+            placeholder="Digite la contraseña"
+            maxlength="45"
+          /><br />
+          <br />
+          <button type="button" class="btn btn-info" id="bmostrarCli">
+            Mostrar Clientes
+          </button>
+          <button type="button" class="btn btn-success" id="bguardarCli">
+            Guardar Cliente
+          </button>
+          <button type="button" class="btn btn-secondary" id="bactualizarCli">
+            Actualizar Cliente
+          </button>
+
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th>idClient</th>
+                <th>email</th>
+                <th>name</th>
+                <th>age</th>
+              </tr>
+            </thead>
+            <tbody id="informacionCli"></tbody>
+          </table>
+        </div>
+      </form>
+
+      <!--<div id="informacionCli"></div>-->
+      <script src="JS/scriptCli.js"></script>
+
+      <form>
+        <div
+          style="text-align: center"
+          class="bg-success p-2 text-dark bg-opacity-25"
+        >
+          <h2>Registro de Mensajes</h2>
+          <input
+            type="number"
+            id="idMes"
+            class="form-control mb-3"
+            placeholder="Ingrese el id si desea Eliminar o Actualizar un mensaje"
+          />
+          <button type="button" class="btn btn-danger" id="beliminarMes">
+            Eliminar</button
+          ><br /><br />
+          <input
+            type="text"
+            id="messagetext"
+            class="form-control mb-3"
+            placeholder="Digite el mensaje"
+            maxlength="250"
+          /><br />
+          <br />
+          <button type="button" class="btn btn-info" id="bmostrarMes">
+            Mostrar Mensajes
+          </button>
+          <button type="button" class="btn btn-success" id="bguardarMes">
+            Guardar Mensaje
+          </button>
+          <button type="button" class="btn btn-secondary" id="bactualizarMes">
+            Actualizar Mensaje
+          </button>
+
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th>idMessage</th>
+                <th>messageText</th>
+              </tr>
+            </thead>
+            <tbody id="informacionMes"></tbody>
+          </table>
+        </div>
+      </form>
+
+      <!--<div id="informacionMes"></div>-->
+      <script src="JS/scriptMes.js"></script>
+
+      <form>
+        <div
+          style="text-align: center"
+          class="bg-success p-2 text-dark bg-opacity-10"
+        >
+          <h2>Creación de Reservas</h2>
+          <input
+            type="number"
+            id="idRes"
+            class="form-control mb-3"
+            placeholder="Ingrese el id si desea Eliminar o Actualizar una Reserva"
+          />
+          <button type="button" class="btn btn-danger" id="beliminarRes">
+            Eliminar</button
+          ><br /><br />
+          <input
+            type="date"
+            id="startDate"
+            class="form-control mb-3"
+            placeholder="digite fecha de inicio"
+          /><br />
+          <input
+            type="date"
+            id="devolutionDate"
+            class="form-control mb-3"
+            placeholder="ingrese la fecha de devolución"
+          />
+          <br />
+          <br />
+          <button type="button" class="btn btn-info" id="bmostrarRes">
+            Mostrar Todas las Reservas
+          </button>
+          <button type="button" class="btn btn-success" id="bguardarRes">
+            Guardar Reserva
+          </button>
+          <button type="button" class="btn btn-secondary" id="bactualizarRes">
+            Actualizar Reserva
+          </button>
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th>idReservation</th>
+                <th>startDate</th>
+                <th>devolutionDate</th>
+                <th>status</th>
+              </tr>
+            </thead>
+            <tbody id="informacionRes"></tbody>
+          </table>
+        </div>
+      </form>
+
+      <!--<div id="informacionRes"></div>-->
+      <script src="JS/Reservation.js"></script>
+
+      <form>
+        <div
+          style="text-align: center"
+          class="bg-success p-2 text-dark bg-opacity-25"
+        >
+          <h2>Creación de usuarios administradores</h2>
+          <input
+            type="number"
+            id="idAdm"
+            class="form-control mb-3"
+            placeholder="Ingrese el id si desea Eliminar o Actualizar un administrador"
+          />
+          <button type="button" class="btn btn-danger" id="beliminarAdm">
+            Eliminar</button
+          ><br /><br />
+          <input
+            type="text"
+            id="nameAdm"
+            class="form-control mb-3"
+            placeholder="Ingrese el nombre"
+            maxlength="250"
+          />
+          <br />
+          <input
+            type="text"
+            id="emailAdm"
+            class="form-control mb-3"
+            placeholder="Ingrese el email"
+            maxlength="45"
+          />
+          <br />
+          <input
+            type="password"
+            id="passwordAdm"
+            class="form-control mb-3"
+            placeholder="Ingrese la contraseña"
+            maxlength="45"
+          />
+          <br />
+          <button type="button" class="btn btn-info" id="bmostrarAdm">
+            Mostrar administradores
+          </button>
+          <button type="button" class="btn btn-success" id="bguardarAdm">
+            Guardar administrador
+          </button>
+          <button type="button" class="btn btn-secondary" id="bactualizarAdm">
+            Actualizar administrador
+          </button>
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>name</th>
+              </tr>
+            </thead>
+            <tbody id="informacionAdm"></tbody>
+          </table>
+        </div>
+      </form>
+      <!--<div id="informacionAdm"></div>-->
+      <script src="JS/Administradores.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-const endpointCli = "http://localhost:8080/api/Client/all";
+const endpointCli = "http://150.230.89.106:8080/api/Client/all";
 const etpCli = document.getElementById("informacionCli");
 /** capturar bones decliente */
 const bmostrarCli = document.getElementById("bmostrarCli");
@@ -30,7 +30,7 @@ function peticiongetCli() {
 function peticionpostCli() {
   $.ajax({
     method: "POST",
-    url: "http://localhost:8080/api/Client/save",
+    url: "http://150.230.89.106:8080/api/Client/save",
     data: capturarClientes(),
     datatype: "json",
     contentType: "application/json",
@@ -46,7 +46,7 @@ function peticionpostCli() {
 function peticionputCli() {
   $.ajax({
     method: "PUT",
-    url: "http://localhost:8080/api/Client/update",
+    url: "http://150.230.89.106:8080/api/Client/update",
     data: capturarClientes(),
     datatype: "json",
     contentType: "application/json",
@@ -62,7 +62,7 @@ function peticionputCli() {
 function peticionDeleteCli() {
   $.ajax({
     method: "DELETE",
-    url: "http://localhost:8080/api/Client/delete",
+    url: "http://150.230.89.106:8080/api/Client/delete",
     data: captIdCli(),
     datatype: "json",
     contentType: "application/json",

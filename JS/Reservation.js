@@ -1,4 +1,4 @@
-const endpointRes = "http://localhost:8080/api/Reservation/all";
+const endpointRes = "http://150.230.89.106:8080/api/Reservation/all";
 const etpRes = document.getElementById("informacionRes");
 /** capturar bones decliente */
 const bmostrarRes = document.getElementById("bmostrarRes");
@@ -27,7 +27,7 @@ function peticiongetRes() {
 function peticionpostRes() {
   $.ajax({
     method: "POST",
-    url: "http://localhost:8080/api/Reservation/save",
+    url: "http://150.230.89.106:8080/api/Reservation/save",
     data: capturarReservas(),
     datatype: "json",
     contentType: "application/json",
@@ -43,7 +43,7 @@ function peticionpostRes() {
 function peticionputRes() {
   $.ajax({
     method: "PUT",
-    url: "http://localhost:8080/api/Reservation/update",
+    url: "http://150.230.89.106:8080/api/Reservation/update",
     data: capturarReservas(),
     datatype: "json",
     contentType: "application/json",
@@ -58,7 +58,7 @@ function peticionputRes() {
 function peticionDeleteRes() {
   $.ajax({
     method: "DELETE",
-    url: "http://localhost:8080/api/Reservation/delete",
+    url: "http://150.230.89.106:8080/api/Reservation/delete",
     data: captIdRes(),
     datatype: "json",
     contentType: "application/json",

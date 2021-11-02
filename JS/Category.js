@@ -1,4 +1,4 @@
-const endpointCat = "http://localhost:8080/api/Category/all";
+const endpointCat = "http://150.230.89.106:8080/api/Category/all";
 const etpCat = document.getElementById("informacionCat");
 /** capturar bones de categoria */
 const bmostrarCat = document.getElementById("bmostrarCat");
@@ -28,7 +28,7 @@ function peticiongetCat() {
 function peticionpostCat() {
     $.ajax({
       method: "POST",
-      url: "http://localhost:8080/api/Category/save",
+      url: "http://150.230.89.106:8080/api/Category/save",
       data: capturarcategoria(),
       datatype: "json",
       contentType: "application/json",
@@ -44,7 +44,7 @@ function peticionpostCat() {
   function peticionputCat() {
     $.ajax({
       method: "PUT",
-      url: "http://localhost:8080/api/Category/update",
+      url: "http://150.230.89.106:8080/api/Category/update",
       data: capturarcategoria(),
       datatype: "json",
       contentType: "application/json",
@@ -60,7 +60,7 @@ function peticionpostCat() {
   function peticionDeleteCat() {
     $.ajax({
       method: "DELETE",
-      url:"http://localhost:8080/api/Category/delete" ,
+      url:"http://150.230.89.106:8080/api/Category/delete" ,
       data: captIdCat(),
       datatype: "json",
       contentType: "application/json",

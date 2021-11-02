@@ -1,4 +1,4 @@
-const endpointAdm = "http://localhost:8080/api/Admin/all";
+const endpointAdm = "http://150.230.89.106:8080/api/Admin/all";
 const etpAdm = document.getElementById("informacionAdm");
 /** capturar bones decliente */
 const bmostrarAdm = document.getElementById("bmostrarAdm");
@@ -28,7 +28,7 @@ function peticiongetAdm() {
 function peticionpostAdm() {
   $.ajax({
     method: "POST",
-    url: "http://localhost:8080/api/Admin/save",
+    url: "http://150.230.89.106:8080/api/Admin/save",
     data: capturarAdministradores(),
     datatype: "json",
     contentType: "application/json",
@@ -44,7 +44,7 @@ function peticionpostAdm() {
 function peticionputAdm() {
   $.ajax({
     method: "PUT",
-    url: "http://localhost:8080/api/Admin/update",
+    url: "http://150.230.89.106:8080/api/Admin/update",
     data: capturarAdministradores(),
     datatype: "json",
     contentType: "application/json",
@@ -60,7 +60,7 @@ function peticionputAdm() {
 function peticionDeleteAdm() {
   $.ajax({
     method: "DELETE",
-    url: "http://localhost:8080/api/Admin/delete",
+    url: "http://150.230.89.106:8080/api/Admin/delete",
     data: captIdAdm(),
     datatype: "json",
     contentType: "application/json",

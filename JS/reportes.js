@@ -8,7 +8,7 @@ const RdevolutionDate = document.getElementById("RdevolutionDate");
 function PeticiongetReportStatus() {
   $.ajax({
     method: "GET",
-    url: "http://localhost:8080/api/Reservation/report-status",
+    url: "http://150.230.89.106:8080/api/Reservation/report-status",
     success: function (data) {
       console.log(data);
       getReportStatus(data);
@@ -53,7 +53,7 @@ function peticiongetReportFecha() {
   console.log(fechaCierre);
   $.ajax({
     url:
-      "http://localhost:8080/api/Reservation/report-dates/" +
+      "http://150.230.89.106:8080/api/Reservation/report-dates/" +
       fechaInicio +
       "/" +
       fechaCierre,
@@ -108,7 +108,7 @@ function getReportDate(reporteFecha) {
 function PeticiongetReportClients() {
   $.ajax({
     method: "GET",
-    url: "http://localhost:8080/api/Reservation/report-clients",
+    url: "http://150.230.89.106:8080/api/Reservation/report-clients",
     success: function (data) {
       console.log(data);
       getStatusClients(data);

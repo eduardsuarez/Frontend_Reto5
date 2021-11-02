@@ -1,4 +1,4 @@
-const endpointAud = "http://localhost:8080/api/Audience/all";
+const endpointAud = "http://150.230.89.106:8080/api/Audience/all";
 const etp = document.getElementById("informacionAud");
 /** capturar bones de auditorio */
 const bmostrarAud = document.getElementById("bmostrarAud");
@@ -30,7 +30,7 @@ function peticiongetAud() {
 function peticionpostAud() {
   $.ajax({
     method: "POST",
-    url: "http://localhost:8080/api/Audience/save",
+    url: "http://150.230.89.106:8080/api/Audience/save",
     data: capturarAuditorio(),
     datatype: "json",
     contentType: "application/json",
@@ -46,7 +46,7 @@ function peticionpostAud() {
 function peticionputAud() {
   $.ajax({
     method: "PUT",
-    url: "http://localhost:8080/api/Audience/update",
+    url: "http://150.230.89.106:8080/api/Audience/update",
     data: capturarAuditorio(),
     datatype: "json",
     contentType: "application/json",
@@ -62,7 +62,7 @@ function peticionputAud() {
 function peticionDeleteAud() {
   $.ajax({
     method: "DELETE",
-    url: "http://localhost:8080/api/Audience/delete",
+    url: "http://150.230.89.106:8080/api/Audience/delete",
     data: captIdAud(),
     datatype: "json",
     contentType: "application/json",

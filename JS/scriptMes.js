@@ -1,4 +1,4 @@
-const endpointMes = "http://localhost:8080/api/Message/all";
+const endpointMes = "http://150.230.89.106:8080/api/Message/all";
 const etpMes = document.getElementById("informacionMes");
 /** capturar bones decliente */
 const bmostrarMes = document.getElementById("bmostrarMes");
@@ -27,7 +27,7 @@ function peticiongetMes() {
 function peticionpostMes() {
   $.ajax({
     method: "POST",
-    url: "http://localhost:8080/api/Message/save",
+    url: "http://150.230.89.106:8080/api/Message/save",
     data: capturarMensajes(),
     datatype: "json",
     contentType: "application/json",
@@ -43,7 +43,7 @@ function peticionpostMes() {
 function peticionputMes() {
   $.ajax({
     method: "PUT",
-    url: "http://localhost:8080/api/Message/update",
+    url: "http://150.230.89.106:8080/api/Message/update",
     data: capturarMensajes(),
     datatype: "json",
     contentType: "application/json",
@@ -59,7 +59,7 @@ function peticionputMes() {
 function peticionDeleteMes() {
   $.ajax({
     method: "DELETE",
-    url: "http://localhost:8080/api/Message/delete",
+    url: "http://150.230.89.106:8080/api/Message/delete",
     data: captIdMes(),
     datatype: "json",
     contentType: "application/json",
